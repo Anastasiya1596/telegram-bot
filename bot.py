@@ -6,11 +6,12 @@ from telegram.ext import (
     ContextTypes,
     filters,
 )
-import re
+import os
 
+TOKEN = os.getenv("BOT_TOKEN")
 
-# ВСТАВЬТЕ НОВЫЙ ТОКЕН ОТ @BotFather
-TOKEN = "8800908083:AAG6nL7rslOpXk6E89EV0JMOTCK974oVHdI"
+if not TOKEN:
+    raise ValueError("Переменная BOT_TOKEN не найдена.")
 
 
 # Кнопки главного меню
